@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "color-closet",
+    "slug": "color-closet",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
