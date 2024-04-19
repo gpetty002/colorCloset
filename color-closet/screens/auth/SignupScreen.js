@@ -1,31 +1,61 @@
 // SignupScreen.js
 
 import React from "react";
-import { TextInput } from "react-native-paper";
-import { Button, View, Text } from "react-native";
-import { Button as PaperButton } from "react-native-paper";
+import Colors from "../../assets/colors";
+import { Button, View, Text, StyleSheet } from "react-native";
+import InputBox from "../../components/auth/InputBox";
+import AnimatedCircles from "../../components/auth/AnimatedCircles";
 
 const SignupScreen = ({ navigation }) => {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email] = React.useState("");
+  const [password] = React.useState("");
+
+  const handleSignup = (email, password) => {
+    // Confirm signup with database
+
+    navigation.navigate("Home");
+  };
+
   return (
-    <View>
-      <Text>Welcome to Signup Screen</Text>
-      <TextInput
-        label="Email"
-        value={email}
-        onChangeText={(email) => setEmail(email)}
-      ></TextInput>
-      <TextInput
-        label="Password"
-        value={password}
-        onChangeText={(password) => setPassword(password)}
-      ></TextInput>
-      <PaperButton onPress={() => navigation.navigate("Home")}>
-        Signup
-      </PaperButton>
+    <View style={styles.background}>
+      <View style={styles.container}>
+        <AnimatedCircles></AnimatedCircles>
+        <Text style={styles.title}>Welcome to ColorCloset</Text>
+        <Text style={styles.subheading}>Sign up to get started</Text>
+        <InputBox
+          style={styles.textBox}
+          emailChange={email}
+          passwordChange={password}
+        ></InputBox>
+        <Button title="Sign up" color="black" onPress={handleSignup}></Button>
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+  container: {
+    marginTop: 290,
+  },
+  title: {
+    fontSize: 30,
+    color: "white",
+    fontFamily: "Helvetica",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  subheading: {
+    fontSize: 15,
+    color: "white",
+    marginTop: 20,
+    fontFamily: "Helvetica",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+});
 
 export default SignupScreen;
