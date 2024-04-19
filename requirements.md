@@ -11,7 +11,7 @@
 - [ ] Clean up UI
   - [ ] Add designs, images, and color
   - [ ] Find color scheme to follow for entire app
-  - [ ] Create a CSS file containing project color palette theme
+  - [x] Create a CSS file containing project color palette theme
 - [ ] Figure out how to lock Featured, Camera, and Closet once we login/signup
 - [ ] Ensure login/signup is correctly protected
 - [ ] Attach MongoDB
